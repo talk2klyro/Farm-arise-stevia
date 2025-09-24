@@ -8,7 +8,6 @@
 <meta name="author" content="Readify">
 <title>Stevia – Sweet, Healthy, and Naturally Fun</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
@@ -63,8 +62,25 @@ header p { font-size: 1.2rem; color: #555; }
 
 .blog-post img {
   width: 100%;
+  max-height: 400px; /* reduce portrait domination */
+  object-fit: cover;
   border-radius: var(--border-radius);
   margin-bottom: 1.5rem;
+}
+
+.inline-img {
+  width: 48%; /* two per row style */
+  max-height: 200px;
+  object-fit: cover;
+  margin: 0.5rem 1%;
+  border-radius: var(--border-radius);
+  float: left;
+}
+
+.section::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .section { margin-bottom: 2rem; }
@@ -97,6 +113,7 @@ blockquote {
 @media (max-width: 768px) {
   header h1 { font-size: 2rem; }
   .blog-post { padding: 1.5rem; }
+  .inline-img { width: 100%; max-height: 250px; margin: 0.5rem 0; float: none; }
 }
 
 .emoji { margin-right: 0.4rem; }
@@ -115,26 +132,26 @@ blockquote {
 <div class="container">
   <article class="blog-post">
 
-    <!-- Header/Hero Image -->
-    <img src="https://i.postimg.cc/3Wx5r5HD/0c65286fc7bbb7fc47f69e4c3aa3b884.jpg" alt="Stevia hero banner">
+    <!-- Hero Image -->
+    <img src="https://i.postimg.cc/3Wx5r5HD/0c65286fc7bbb7fc47f69e4c3aa3b884.jpg" alt="Stevia hero banner" loading="lazy">
 
     <section class="section">
       <h2>🥗 Intro (Hook + Curiosity)</h2>
-      <img src="https://i.postimg.cc/sGXtTSJJ/80c9c4199716b2383fb6761d83d9bdd1.jpg" alt="Fresh stevia leaves">
+      <img src="https://i.postimg.cc/sGXtTSJJ/80c9c4199716b2383fb6761d83d9bdd1.jpg" alt="Fresh stevia leaves" loading="lazy">
       <p>Think about it: what if a tiny green leaf could make everything sweet without sugar? 🤔  
       Stevia is nature’s sweetener, calorie-free, and perfect for healthy drinks, desserts, and even baking! 🥤🍰</p>
     </section>
 
     <section class="section">
       <h2>❓ What Is It?</h2>
-      <img src="https://i.postimg.cc/7GXF1XS6/cff1c2a67fa16a814119c7625f06492f.jpg" alt="Stevia plant vs powdered stevia">
+      <img src="https://i.postimg.cc/7GXF1XS6/cff1c2a67fa16a814119c7625f06492f.jpg" alt="Stevia plant vs powdered stevia" loading="lazy">
       <p>Stevia is a plant with naturally sweet leaves. 🌿  
       It can replace sugar in drinks, desserts, or recipes while keeping calories low. 🍬</p>
     </section>
 
     <section class="section">
       <h2>🍳 How to Use/Do It (Steps)</h2>
-      <img src="https://i.postimg.cc/HjvGVZpv/e203e1ba35bc4688718b73511b7f35c2.jpg" alt="Step by step usage of stevia">
+      <img src="https://i.postimg.cc/HjvGVZpv/e203e1ba35bc4688718b73511b7f35c2.jpg" alt="Step by step usage of stevia" loading="lazy">
       <ol>
         <li>Wash fresh stevia leaves thoroughly. 💦</li>
         <li>Chop or crush leaves to release natural sweetness. 🔪</li>
@@ -145,6 +162,8 @@ blockquote {
 
     <section class="section">
       <h2>🍽 How to Apply It</h2>
+      <img class="inline-img" src="https://i.postimg.cc/3Wx5r5HD/0c65286fc7bbb7fc47f69e4c3aa3b884.jpg" alt="Tea with stevia" loading="lazy">
+      <img class="inline-img" src="https://i.postimg.cc/sGXtTSJJ/80c9c4199716b2383fb6761d83d9bdd1.jpg" alt="Smoothie with stevia" loading="lazy">
       <ul>
         <li>Sweeten tea or coffee naturally. ☕🍃</li>
         <li>Mix into smoothies for a healthy sweetness. 🥤</li>
@@ -156,6 +175,8 @@ blockquote {
 
     <section class="section">
       <h2>💡 Tips & Variations</h2>
+      <img class="inline-img" src="https://i.postimg.cc/7GXF1XS6/cff1c2a67fa16a814119c7625f06492f.jpg" alt="Lemon mint stevia drink" loading="lazy">
+      <img class="inline-img" src="https://i.postimg.cc/HjvGVZpv/e203e1ba35bc4688718b73511b7f35c2.jpg" alt="Powdered stevia with honey" loading="lazy">
       <ul>
         <li>Experiment with fresh vs. dried leaves. 🌿</li>
         <li>Blend with lemon 🍋 or mint 🌱 for a refreshing drink.</li>
@@ -176,4 +197,4 @@ blockquote {
 </div>
 
 </body>
-</html>
+        </html>
