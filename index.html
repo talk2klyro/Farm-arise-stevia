@@ -8,9 +8,11 @@
 <meta name="author" content="Readify">
 <title>Stevia – Sweet, Healthy, and Naturally Fun</title>
 
+<!-- Google Fonts: Modern, readable -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
+/* === GLOBAL STYLES === */
 :root {
   --primary-color: #27ae60;
   --secondary-color: #f8f8f8;
@@ -31,14 +33,31 @@ body {
   padding: 0;
 }
 
-a { color: var(--primary-color); text-decoration: none; transition: color var(--transition-speed);}
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
 a:hover { color: var(--accent-color); }
 
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--heading-color); margin: 1rem 0 0.5rem 0; }
-p { margin: 0.8rem 0; }
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--heading-color);
+  margin: 1rem 0 0.5rem 0;
+}
 
-.container { max-width: var(--max-width); margin: 2rem auto; padding: 0 1.5rem; }
+p {
+  margin: 0.8rem 0;
+}
 
+/* === CONTAINER === */
+.container {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* === TOP HEADER === */
 header {
   text-align: center;
   padding: 3rem 1rem 2rem 1rem;
@@ -47,10 +66,15 @@ header {
   border-bottom-right-radius: var(--border-radius);
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
+header h1 {
+  font-size: 2.8rem;
+}
+header p {
+  font-size: 1.2rem;
+  color: #555;
+}
 
-header h1 { font-size: 2.8rem; }
-header p { font-size: 1.2rem; color: #555; }
-
+/* === BLOG CONTENT === */
 .blog-post {
   background: white;
   border-radius: var(--border-radius);
@@ -61,71 +85,51 @@ header p { font-size: 1.2rem; color: #555; }
 
 .blog-post img {
   width: 100%;
-  max-height: 400px;
-  object-fit: cover;
   border-radius: var(--border-radius);
   margin-bottom: 1.5rem;
 }
 
-.inline-img {
-  width: 48%;
-  max-height: 200px;
-  object-fit: cover;
-  margin: 0.5rem 1%;
-  border-radius: var(--border-radius);
-  float: left;
+/* === SECTIONS === */
+.section {
+  margin-bottom: 2rem;
 }
 
-.section::after { content: ""; display: block; clear: both; }
+.section h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  border-left: 5px solid var(--primary-color);
+  padding-left: 0.8rem;
+}
 
-.section { margin-bottom: 2rem; }
-.section h2 { color: var(--primary-color); font-size: 1.8rem; border-left: 5px solid var(--primary-color); padding-left: 0.8rem; }
-.section p { font-size: 1rem; }
+.section p {
+  font-size: 1rem;
+}
 
-ol, ul { margin: 1rem 0 1rem 1.5rem; }
-li { margin-bottom: 0.8rem; }
+/* === STEPS & LISTS === */
+ol, ul {
+  margin: 1rem 0 1rem 1.5rem;
+}
 
+li {
+  margin-bottom: 0.8rem;
+}
+
+/* === CTA BUTTONS === */
 .btn {
   display: inline-block;
-  padding: 0.8rem 1.8rem;
-  background: linear-gradient(45deg, #ff6b6b, #ff9a76);
+  padding: 0.8rem 1.5rem;
+  background: var(--accent-color);
   color: white;
   font-weight: bold;
-  font-size: 1rem;
-  border-radius: 50px;
-  text-align: center;
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 15px rgba(255,107,107,0.4);
-  position: relative;
+  border-radius: var(--border-radius);
+  transition: background var(--transition-speed);
+  margin-top: 1rem;
 }
-
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255,107,107,0.5);
+  background: #e65c00;
 }
 
-/* Bubble animation */
-.btn::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: bubble-rise 2s infinite ease-in-out;
-}
-
-@keyframes bubble-rise {
-  0% { transform: translate(-50%, 50%) scale(0.5); opacity: 0.7; }
-  50% { transform: translate(-50%, -60px) scale(1); opacity: 1; }
-  100% { transform: translate(-50%, -120px) scale(0.5); opacity: 0; }
-}
-
+/* === QUOTES / HIGHLIGHTS === */
 blockquote {
   border-left: 4px solid var(--primary-color);
   padding-left: 1rem;
@@ -134,15 +138,20 @@ blockquote {
   margin: 1.5rem 0;
 }
 
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   header h1 { font-size: 2rem; }
   .blog-post { padding: 1.5rem; }
-  .inline-img { width: 100%; max-height: 250px; margin: 0.5rem 0; float: none; }
 }
 
+/* === EMOJI SPACING === */
 .emoji { margin-right: 0.4rem; }
-.blog-post h2:hover { color: var(--accent-color); transition: color var(--transition-speed); }
 
+/* === ADVANCED HOVER EFFECTS === */
+.blog-post h2:hover {
+  color: var(--accent-color);
+  transition: color var(--transition-speed);
+}
 </style>
 </head>
 
@@ -156,26 +165,22 @@ blockquote {
 <div class="container">
   <article class="blog-post">
 
-    <!-- Hero Image -->
-    <img src="https://i.postimg.cc/3Wx5r5HD/0c65286fc7bbb7fc47f69e4c3aa3b884.jpg" alt="Stevia hero banner" loading="lazy">
+    <img src="https://i.postimg.cc/rwsqp886/design-a-vibrant-professional-ebook-cove-Ia-DIl0ev-RD-u4u-ICx-Ov-Bs-A-9-Il-Kksn-RQvus-Cm-QPDIeif-A.jpg" alt="Stevia Leaf and Sweetness">
 
     <section class="section">
       <h2>🥗 Intro (Hook + Curiosity)</h2>
-      <img src="https://i.postimg.cc/sGXtTSJJ/80c9c4199716b2383fb6761d83d9bdd1.jpg" alt="Fresh stevia leaves" loading="lazy">
       <p>Think about it: what if a tiny green leaf could make everything sweet without sugar? 🤔  
       Stevia is nature’s sweetener, calorie-free, and perfect for healthy drinks, desserts, and even baking! 🥤🍰</p>
     </section>
 
     <section class="section">
       <h2>❓ What Is It?</h2>
-      <img src="https://i.postimg.cc/7GXF1XS6/cff1c2a67fa16a814119c7625f06492f.jpg" alt="Stevia plant vs powdered stevia" loading="lazy">
       <p>Stevia is a plant with naturally sweet leaves. 🌿  
       It can replace sugar in drinks, desserts, or recipes while keeping calories low. 🍬</p>
     </section>
 
     <section class="section">
       <h2>🍳 How to Use/Do It (Steps)</h2>
-      <img src="https://i.postimg.cc/HjvGVZpv/e203e1ba35bc4688718b73511b7f35c2.jpg" alt="Step by step usage of stevia" loading="lazy">
       <ol>
         <li>Wash fresh stevia leaves thoroughly. 💦</li>
         <li>Chop or crush leaves to release natural sweetness. 🔪</li>
@@ -186,8 +191,6 @@ blockquote {
 
     <section class="section">
       <h2>🍽 How to Apply It</h2>
-      <img class="inline-img" src="https://i.postimg.cc/3Wx5r5HD/0c65286fc7bbb7fc47f69e4c3aa3b884.jpg" alt="Tea with stevia" loading="lazy">
-      <img class="inline-img" src="https://i.postimg.cc/sGXtTSJJ/80c9c4199716b2383fb6761d83d9bdd1.jpg" alt="Smoothie with stevia" loading="lazy">
       <ul>
         <li>Sweeten tea or coffee naturally. ☕🍃</li>
         <li>Mix into smoothies for a healthy sweetness. 🥤</li>
@@ -199,8 +202,6 @@ blockquote {
 
     <section class="section">
       <h2>💡 Tips & Variations</h2>
-      <img class="inline-img" src="https://i.postimg.cc/7GXF1XS6/cff1c2a67fa16a814119c7625f06492f.jpg" alt="Lemon mint stevia drink" loading="lazy">
-      <img class="inline-img" src="https://i.postimg.cc/HjvGVZpv/e203e1ba35bc4688718b73511b7f35c2.jpg" alt="Powdered stevia with honey" loading="lazy">
       <ul>
         <li>Experiment with fresh vs. dried leaves. 🌿</li>
         <li>Blend with lemon 🍋 or mint 🌱 for a refreshing drink.</li>
@@ -212,14 +213,13 @@ blockquote {
     <section class="section">
       <h2>🌟 Closing (Friendly Wrap-Up)</h2>
       <p>Now you know the power of stevia! 🍃💚  
-      One small leaf can replace sugar, save calories, and make your drinks and desserts naturally sweet. Try it today and enjoy! 😋</p>
+      Think about it: one small leaf can replace sugar, save calories, and make your drinks and desserts naturally sweet. Try it today and enjoy! 😋</p>
     </section>
 
-    <!-- Bubble Button -->
-    <a href="https://readify-rust.vercel.app/" class="btn" target="_blank">Get Your Free Stevia Guide 🌱</a>
+    <a href="#" class="btn">Get Your Free Stevia Guide 🌱</a>
 
   </article>
 </div>
 
 </body>
-        </html>
+</html>
